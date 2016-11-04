@@ -1,11 +1,5 @@
 package org.ovirtChina.enginePlugin.engineManageDomains.process;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +58,9 @@ public class List2Domain {
   * @return        value on the line
   */
   private String processLine(String aLine){
+    if (!aLine.contains(":")){
+      return "";
+    }
     //use a second Scanner to parse the content of each line
     Scanner scanner = new Scanner(aLine);
 

@@ -7,7 +7,7 @@
   // Define event handler functions for later invocation by UI plugin infrastructure
   app.factory('translationService', ['$window', '$filter', 'english', 'chinese', function ($window, $filter, english, chinese) {
 
-    var langKey = $filter('limitTo')($window.navigator.userLanguage || $window.navigator.language, 2);
+    var langKey = top.location.href.split("=")[1].split("_")[0];
 
     return {
       getTranslation: function ($scope) {
@@ -52,7 +52,7 @@
         "TABLE_DOMAIN_LABEL" : "Domain",
         "TABLE_USERNAME_LABEL" : "Username",
         "TABLE_ACTIONS_LABEL" : "Actions",
-        "TABLE_NO_DOMAINS" : "No domain to display.",
+        "TABLE_NO_DOMAINS" : "No domain to display",
         "TABLE_BTN_EDIT_LABEL" : "Edit",
         "TABLE_BTN_REMOVE_LABEL" : "Delete",
 
@@ -146,7 +146,7 @@
         "TABLE_DOMAIN_LABEL" : "域",
         "TABLE_USERNAME_LABEL" : "用户名",
         "TABLE_ACTIONS_LABEL" : "行动",
-        "TABLE_NO_DOMAINS" : "无域显示。",
+        "TABLE_NO_DOMAINS" : "无域显示",
         "TABLE_BTN_EDIT_LABEL" : "编辑",
         "TABLE_BTN_REMOVE_LABEL" : "删除",
 
